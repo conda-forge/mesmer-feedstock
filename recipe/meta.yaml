@@ -1,6 +1,6 @@
 {% set name = "mesmer" %}
 {% set pypiname = "mesmer-emulator" %}
-{% set version = "0.8.2" %}
+{% set version = "0.8.3" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypiname[0] }}/{{ pypiname }}/{{ pypiname }}-{{ version }}.tar.gz
-  sha256: 6828a76cb5a8870ca3a005a61a05a5de2befca3616241c2d37d822aed63a5b0d
+  sha256: 99f28c07ecfca7ed983d7638552d25df1763cd1010e375b0cc6c51efd03ed1b5
 
 build:
   number: 0
