@@ -28,7 +28,7 @@ requirements:
     - joblib
     - numpy
     - packaging
-    - pandas <2
+    - pandas
     - pooch
     - pyproj
     - regionmask >=0.8
