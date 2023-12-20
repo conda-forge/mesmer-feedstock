@@ -28,10 +28,10 @@ requirements:
     - joblib
     - numpy
     - packaging
-    - pandas < 2
+    - pandas <2
     - pooch
     - pyproj
-    - regionmask >= 0.8
+    - regionmask >=0.8
     - scikit-learn
     - scipy
     - statsmodels
