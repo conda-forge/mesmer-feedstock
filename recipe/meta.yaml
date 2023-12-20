@@ -1,6 +1,6 @@
 {% set name = "mesmer" %}
 {% set pypiname = "mesmer-emulator" %}
-{% set version = "0.8.3" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ pypiname[0] }}/{{ pypiname }}/{{ pypiname }}-{{ version }}.tar.gz
-  sha256: 99f28c07ecfca7ed983d7638552d25df1763cd1010e375b0cc6c51efd03ed1b5
+  sha256: a3fb96410f206ea0c091b3218ed3aaf6187c73df65e69542bc487a0ecfb3bc6c
 
 build:
   number: 0
@@ -17,19 +17,24 @@ build:
 
 requirements:
   host:
-    - pip
     - python >=3.7
+    - pip
+    - setuptools >=42
+    - setuptools-scm >=7
   run:
     - python >=3.7
     - dask
     - distributed
     - joblib
     - numpy
-    - pandas
+    - packaging
+    - pandas <2
+    - pooch
+    - pyproj
+    - regionmask >=0.8
     - scikit-learn
     - scipy
     - statsmodels
-    - regionmask
     - xarray
 
 test:
