@@ -17,25 +17,25 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.9
     - pip
     - setuptools >=42
     - setuptools-scm >=7
   run:
-    - python >=3.7
+    - python >=3.9
     - dask
     - distributed
     - joblib
     - numpy
     - packaging
-    - pandas <2
+    - pandas >=2
     - pooch
     - pyproj
     - regionmask >=0.8
     - scikit-learn
     - scipy
     - statsmodels
-    - xarray
+    - xarray >=2023.04
 
 test:
   imports:
