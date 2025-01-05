@@ -7,22 +7,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ pypiname[0] }}/{{ pypiname }}/{{ pypiname }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ pypiname[0] }}/{{ pypiname }}/{{ pypiname }}-{{ version }}.tar.gz
   sha256: c8ff1b5b4bff0a59cd93cd6b4dc694ec20c440a39b32851182c6e915fb9aa2f7
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
 
 requirements:
   host:
-    - python >=3.9
+    - python {{ python_min }}
     - pip
     - setuptools >=42
     - setuptools-scm >=7
   run:
-    - python >=3.9
+    - python >={{ python_min }}
     - dask
     - distributed
     - joblib
@@ -42,6 +42,7 @@ test:
     - mesmer
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
     - python -c "import mesmer; assert mesmer.__version__ == '{{ version }}', mesmer.__version__"
