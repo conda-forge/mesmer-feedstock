@@ -1,6 +1,7 @@
 {% set name = "mesmer" %}
-{% set pypiname = "mesmer-emulator" %}
-{% set version = "0.10.0" %}
+{% set pypiname = "mesmer_emulator" %}
+{% set version = "1.0.0" %}
+{% set python_min = "3.12" %}
 
 package:
   name: {{ name|lower }}
@@ -8,10 +9,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ pypiname[0] }}/{{ pypiname }}/{{ pypiname }}-{{ version }}.tar.gz
-  sha256: c8ff1b5b4bff0a59cd93cd6b4dc694ec20c440a39b32851182c6e915fb9aa2f7
+  sha256: e2c22edefbae72510e0cb3343ee73e6db208376344a5b2fac628b07baa154dbd
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv
 
@@ -23,19 +24,22 @@ requirements:
     - setuptools-scm >=7
   run:
     - python >={{ python_min }}
-    - dask
-    - distributed
-    - joblib
-    - numpy
-    - packaging
-    - pandas >=2
-    - pooch
-    - pyproj
-    - regionmask >=0.8
-    - scikit-learn
-    - scipy
-    - statsmodels
-    - xarray >=2023.04
+    - dask >=2025.04
+    - deprecated
+    - filefisher >=1.1
+    - distributed  >=2025.4
+    - joblib >=1.5
+    - netcdf4 >=1.7
+    - numpy >=2.1
+    - packaging >=25.0
+    - pandas >=2.2
+    - pooch >=1.8
+    - pyproj >=3.7
+    - regionmask >=0.13
+    - scikit-learn >=1.6
+    - scipy >=1.15
+    - statsmodels >=0.14
+    - xarray >=2025.11
 
 test:
   imports:
