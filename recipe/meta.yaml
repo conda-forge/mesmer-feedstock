@@ -1,6 +1,7 @@
 {% set name = "mesmer" %}
 {% set pypiname = "mesmer-emulator" %}
 {% set version = "1.0.0" %}
+{% set python_min = "3.12" %}
 
 package:
   name: {{ name|lower }}
