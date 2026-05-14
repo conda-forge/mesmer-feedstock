@@ -1,5 +1,5 @@
 {% set name = "mesmer" %}
-{% set pypiname = "mesmer-emulator" %}
+{% set pypiname = "mesmer_emulator" %}
 {% set version = "1.0.0" %}
 {% set python_min = "3.12" %}
 
@@ -9,6 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ pypiname[0] }}/{{ pypiname }}/{{ pypiname }}-{{ version }}.tar.gz
+  https://files.pythonhosted.org/packages/37/82/5c28460aeb846ea00e08939b8ef29818ef701789036d82629395f6886581/mesmer_emulator-1.0.0.tar.gz
   sha256: e2c22edefbae72510e0cb3343ee73e6db208376344a5b2fac628b07baa154dbd
 
 build:
